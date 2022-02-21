@@ -1,33 +1,42 @@
 import React from "react";
-import { View, Text, FlatList } from "react-native";
-import { Avatar, Button, Icon } from "react-native-elements";
+import { 
+    View, 
+    Text, 
+    FlatList, 
+    StyleSheet 
+} from "react-native";
+import { 
+    Avatar, 
+    Button, 
+    Icon 
+} from "react-native-elements";
 import users from "../data/users"
 
-export default () => {
+export default (props) => {
 
     function getUserItem({ item }) {
         return (
-            <View style={{flexDirection: "row", padding: 10}}>
+            <View style={styles.container}>
                 <Avatar 
                     size={80}
                     rounded
                     source={{uri: item.avatarUrl}}
                     style={{ flex: 1 }}
                 />
-                <View style={{padding: 20, flex: 2}}>
-                    <Text style={{fontSize: 20, fontWeight: "bold"}}>{item.name}</Text>
+                <View style={styles.viewText}>
+                    <Text style={styles.textTitle}>{item.name}</Text>
                     <Text>{item.email}</Text>
                 </View>
-                <View style={{ flex: 1, flexDirection: "row", alignItems: "center"}}>
+                <View style={styles.buttons}>
                     <Button 
-                        type="clear"
                         icon={<Icon name="edit" size={20} color="orange"/>}
-                        onPress={() => console.warn('Editando - ' + item.name)}
+                        onPress={() => props.navigation.navigate("UserForm", item)}
+                        type="clear"
                     />
                     <Button 
-                        type="clear"
                         icon={<Icon name="delete" size={20} color="red"/>}
-                        onPress={() => console.warn('Deletando - ' + item.name)}
+                        onPress={() => console.warn(props)}
+                        type="clear"
                     />
                 </View>
             </View>
@@ -44,3 +53,23 @@ export default () => {
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flexDirection: "row", 
+        padding: 10
+    },
+    viewText: {
+        padding: 20, 
+        flex: 2
+    },
+    textTitle: {
+        fontSize: 20, 
+        fontWeight: "bold"
+    },
+    buttons: { 
+        flex: 1, 
+        flexDirection: "row", 
+        alignItems: "center"
+    }
+})
