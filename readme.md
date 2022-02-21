@@ -6,4 +6,4 @@ O objetivo desse plano de estudos é desenvolver um App em React Native usando o
 
 ### App: 
 
-![App](https://github.com/BroyzCraft/ReactNativeCrud/blob/main/src/img/App.jpg)
+![App](https://github.com/BroyzCraft/ReactNativeCrud/blob/main/img/App.jpg)
