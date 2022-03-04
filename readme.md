@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-O objetivo desse plano de estudos é desenvolver um App em React Native usando os princípios básicos de CRUD e além disso, poder conhecer um pouco da ferramenta **React-Native-Elements** (https://reactnativeelements.com/)
+O objetivo desse plano de estudos é desenvolver um App em React Native usando os princípios básicos de CRUD, poder conhecer um pouco da ferramenta **React-Native-Elements** (https://reactnativeelements.com/) e o uso de ContextAPI e Use-Redux
 
 ### App: 
 
